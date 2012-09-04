@@ -1,0 +1,13 @@
+<% @config.each do |k,v| -%>
+  <% if v -%>
+    <% if(v.is_a?(Array)) -%>
+      <% v.each do |val| -%>
+<%= k %>=<%= val %>
+      <% end -%>
+    <% else -%>
+<%= k %>=<%= v %>
+    <% end -%>
+  <% else -%>
+<%= k %>
+  <% end -%>
+<% end -%>
