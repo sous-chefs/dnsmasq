@@ -41,7 +41,8 @@ If you need manage your DNS hosts you may use the `dnsmasq` data bag `managed_ho
 * `[:dnsmasq][:managed_hosts_bag]` name of the data bag item, default is `managed_hosts`
 * `[:dnsmasq][:dhcp]` = hash of settings and values for the `/etc/dnsmasq.d/dhcp.conf`, default is empty
 * `[:dnsmasq][:dns]` hash of settings and values for the `/etc/dnsmasq.d/dns.conf`, defaults are
-```
+
+```ruby
 {
   'no-poll' => nil,
   'no-resolv' => nil,
