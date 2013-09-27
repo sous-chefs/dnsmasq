@@ -35,11 +35,12 @@ If you need manage your DNS hosts you may use the `dnsmasq` data bag `managed_ho
 
 ## Attributes
 
-`[:dnsmasq][:enable_dns]` whether to enable the DNS service, default is `true`
-`[:dnsmasq][:enable_dhcp]` whether to enabled the DHCP service, default is `false`
-`[:dnsmasq][:managed_hosts]` hash of IPs and hostname/array of hostnames for the `manage_hostfile` recipe, default is empty
-`[:dnsmasq][:managed_hosts_bag]` name of the data bag item, default is `managed_hosts`
-`[:dnsmasq][:dns]` hash of settings and values for the `/etc/dnsmasq.d/dns.conf`, defaults are
+* `[:dnsmasq][:enable_dns]` whether to enable the DNS service, default is `true`
+* `[:dnsmasq][:enable_dhcp]` whether to enabled the DHCP service, default is `false`
+* `[:dnsmasq][:managed_hosts]` hash of IPs and hostname/array of hostnames for the `manage_hostfile` recipe, default is empty
+* `[:dnsmasq][:managed_hosts_bag]` name of the data bag item, default is `managed_hosts`
+* `[:dnsmasq][:dhcp]` = hash of settings and values for the `/etc/dnsmasq.d/dhcp.conf`, default is empty
+* `[:dnsmasq][:dns]` hash of settings and values for the `/etc/dnsmasq.d/dns.conf`, defaults are
 ```
 {
   'no-poll' => nil,
@@ -47,7 +48,6 @@ If you need manage your DNS hosts you may use the `dnsmasq` data bag `managed_ho
   'server' => '127.0.0.1'
 }
 ```
-`[:dnsmasq][:dhcp]` = hash of settings and values for the `/etc/dnsmasq.d/dhcp.conf`, default is empty
 
 # Repo:
 
