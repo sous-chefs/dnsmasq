@@ -50,6 +50,10 @@ If you need manage your DNS hosts you may use the `dnsmasq` data bag `managed_ho
 }
 ```
 
+## Testing
+
+Please refer to the [TESTING file](TESTING.md) to see instructions for testing this cookbook. It is currently tested on the following platforms: CentOS 5.9, CentOS 6.4, Debian 7.1, Ubuntu 10.04 and Ubuntu 12.04.
+
 # Repo:
 
 * https://github.com/hw-cookbooks/dnsmasq
