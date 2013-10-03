@@ -10,7 +10,8 @@ template '/etc/dnsmasq.d/dns.conf' do
   source 'dynamic_config.erb'
   mode 0644
   variables(
-    :config => dns_config
+    :config => dns_config,
+    :list => node['dnsmasq']['dns_options']
   )
   notifies :restart, resources(:service => 'dnsmasq'), :immediately
 end
