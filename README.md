@@ -1,6 +1,6 @@
 # DNSMasq
 
-Install and configure dnsmasq. Depends on the [hosts_file cookbook](https://github.com/hw-cookbooks/hosts_file)
+Install and configure dnsmasq. Depends on the [hosts_file cookbook](https://github.com/hw-cookbooks/hosts_file).
 
 # Recipes
 
@@ -9,7 +9,24 @@ Installs the `dnsmasq` package. Depending on the `[:dnsmasq][:enable_dns]` and `
 
 ## dhcp
 
-Includes the `default` recipe and writes the contents of the `node[:dnsmasq][:dhcp]` attribute hash to `/etc/dnsmasq.d/dhcp.conf`.
+Includes the `default` recipe and writes the contents of the `node[:dnsmasq][:dhcp]` attribute hash to `/etc/dnsmasq.d/dhcp.conf`. Here is an example of the necessary attributes for DHCP with TFTP enabled:
+
+```ruby
+'dnsmasq' => {
+  'enable_dhcp' => true,
+  'dhcp' => {
+    'dhcp-authoritative' => nil,
+    'dhcp-range' => 'eth0,10.0.0.10,10.0.0.100,12h',
+    'dhcp-option' => '3', #turns off everything except basic DHCP
+    'domain' => 'lab.atx',
+    'interface' => 'eth0',
+    'dhcp-boot' => 'pxelinux.0',
+    'enable-tftp' => nil,
+    'tftp-root' => '/var/lib/tftpboot',
+    'tftp-secure' => nil
+  }
+}
+```
 
 ## dns
 
@@ -40,8 +57,8 @@ If you need manage your DNS hosts you may use the `dnsmasq` data bag `managed_ho
 * `[:dnsmasq][:managed_hosts]` hash of IPs and hostname/array of hostnames for the `manage_hostfile` recipe, default is empty
 * `[:dnsmasq][:managed_hosts_bag]` name of the data bag item, default is `managed_hosts`
 * `[:dnsmasq][:dhcp]` = hash of settings and values for the `/etc/dnsmasq.d/dhcp.conf`, default is empty
+* `[:dnsmasq][:dhcp_options]` = list of options to be added to the `/etc/dnsmasq.d/dhcp.conf` (ie. `['dhcp-host=80:ee:73:0a:fa:d9,crushinator,10.0.0.11']`), default is empty.
 * `[:dnsmasq][:dns]` hash of settings and values for the `/etc/dnsmasq.d/dns.conf`, defaults are
-
 ```ruby
 {
   'no-poll' => nil,
@@ -49,6 +66,7 @@ If you need manage your DNS hosts you may use the `dnsmasq` data bag `managed_ho
   'server' => '127.0.0.1'
 }
 ```
+* `[:dnsmasq][:dns_options]` = list of options to be added to the `/etc/dnsmasq.d/dns.conf`, default is empty.
 
 ## Testing
 
