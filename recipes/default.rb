@@ -1,14 +1,7 @@
 package 'dnsmasq'
 
-if(node[:dnsmasq][:enable_dns])
-  include_recipe 'hosts_file'
-end
-
 service 'dnsmasq' do
   action [:enable, :start]
-  if(node[:dnsmasq][:enable_dns])
-    subscribes :restart, resources(:template => 'managed_hosts_file'), :immediately
-  end
 end
 
 if(node[:dnsmasq][:enable_dns])

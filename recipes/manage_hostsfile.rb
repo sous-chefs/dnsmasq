@@ -14,5 +14,6 @@ managed_hosts.each do |ip, host|
     hostname host.shift
     aliases host unless host.empty?
     comment 'dnsmasq managed entry'
+    notifies :restart, resources(:service => 'dnsmasq')
   end
 end

@@ -1,4 +1,0 @@
-cookbook "dnsmasq" do
-  lint :ignore => %w(FC001)
-  runtimes []
-end
