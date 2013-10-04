@@ -11,3 +11,9 @@
 <%= k %>
   <% end -%>
 <% end -%>
+
+<% if @list -%>
+<% @list.sort.each do |i| -%>
+<%= i %>
+<% end -%>
+<% end -%>
