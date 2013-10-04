@@ -1,5 +1,6 @@
 .bundle
 .cache
 .kitchen
-bin
+.kitchen.local.yml
 Berksfile.lock
+bin
