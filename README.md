@@ -30,11 +30,11 @@ Includes the `default` recipe and writes the contents of the `node[:dnsmasq][:dh
 
 ## dns
 
-Includes the `default` and `manage_hostsfile` recipes, then writes the content of the `node[:dnsmasq][:dns]` attribute hash to `/etc/dnsmasq.d/dns.conf`.
+Includes the `default` and, if `[:dnsmasq][:enable_hostsfile]` has not been unset, `manage_hostsfile` recipes, then writes the content of the `node[:dnsmasq][:dns]` attribute hash to `/etc/dnsmasq.d/dns.conf`.
 
 ## manage_hostsfile
 
-Loads the `dnsmasq` data bag `managed_hosts` item and merges it with any nodes in the `[:dnsmasq][:managed_hosts]` attribute, then writes them out the the `/etc/hosts/` via the `hosts_file` cookbook.
+Loads the `dnsmasq` data bag `managed_hosts` item and merges it with any nodes in the `[:dnsmasq][:managed_hosts]` attribute, then writes them out to the `/etc/hosts` file via the `hosts_file` cookbook.
 
 # Usage
 
@@ -53,7 +53,8 @@ If you need manage your DNS hosts you may use the `dnsmasq` data bag `managed_ho
 ## Attributes
 
 * `[:dnsmasq][:enable_dns]` whether to enable the DNS service, default is `true`
-* `[:dnsmasq][:enable_dhcp]` whether to enabled the DHCP service, default is `false`
+* `[:dnsmasq][:enable_dhcp]` whether to enable the DHCP service, default is `false`
+* `[:dnsmasq][:enable_hostsfile]` whether to manage `/etc/hosts`, default is `true`
 * `[:dnsmasq][:managed_hosts]` hash of IPs and hostname/array of hostnames for the `manage_hostfile` recipe, default is empty
 * `[:dnsmasq][:managed_hosts_bag]` name of the data bag item, default is `managed_hosts`
 * `[:dnsmasq][:dhcp]` = hash of settings and values for the `/etc/dnsmasq.d/dhcp.conf`, default is empty

@@ -1,5 +1,8 @@
 include_recipe 'dnsmasq::default'
-include_recipe 'dnsmasq::manage_hostsfile'
+
+if(node[:dnsmasq][:enable_hostsfile])
+  include_recipe 'dnsmasq::manage_hostsfile'
+end
 
 dns_config = node[:dnsmasq][:dns].to_hash
 unless(node[:dnsmasq][:enable_dhcp])

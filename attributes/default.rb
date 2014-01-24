@@ -2,6 +2,7 @@ default[:dnsmasq][:enable_dhcp] = false
 default[:dnsmasq][:dhcp] = {}
 default[:dnsmasq][:dhcp_options] = []
 default[:dnsmasq][:enable_dns] = true
+default[:dnsmasq][:enable_hostsfile] = true
 default[:dnsmasq][:dns] = {
   'no-poll' => nil,
   'no-resolv' => nil,
