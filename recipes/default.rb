@@ -4,9 +4,20 @@ package 'dnsmasq'
 # otherwise resolving will fail.
 valid_resolv_config = node[:dnsmasq][:enable_dns] && !Array(node[:dnsmasq][:dns][:server]).any? {|ip| ip == '127.0.0.1'}
 
-unless %x(which resolvconf).empty? || valid_resolv_config
-  Chef::Log.error('Resolving will fail since your configuration is inconsistent')
-  raise RuntimeError, "Provide external dns servers and enable dns in dnsmasq"
+unless valid_resolv_config
+  ruby_block "inconsistent resolvconf configuration" do
+    block do
+      Chef::Log.error('Resolving will fail since your dnsmasq configuration is inconsistent')
+      raise RuntimeError, "Provide external dns servers and enable dns in dnsmasq"
+    end
+    only_if "which resolvconf"
+  end
+end
+
+# We stop dnsmasq because resolv configuration is not yet consistent
+service 'dnsmasq' do
+  only_if "which resolvconf && [ ! -f /etc/dnsmasq.d/dns.conf ]"
+  action :stop
 end
 
 if node[:dnsmasq][:enable_dns]

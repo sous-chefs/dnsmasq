@@ -1,9 +1,3 @@
-# We stop dnsmasq because resolv configuration is not yet consistent
-service 'dnsmasq' do
-  only_if "which resolvconf && [ ! -f /etc/dnsmasq.d/dns.conf ]"
-  action :stop
-end
-
 include_recipe 'dnsmasq::default'
 include_recipe 'dnsmasq::manage_hostsfile'
 
