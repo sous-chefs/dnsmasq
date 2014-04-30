@@ -13,5 +13,5 @@ template '/etc/dnsmasq.d/dns.conf' do
     :config => dns_config,
     :list => node['dnsmasq']['dns_options']
   )
-  notifies :restart, resources(:service => 'dnsmasq'), :immediately
+  notifies :restart, "service[dnsmasq]"
 end
