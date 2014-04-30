@@ -1,8 +1,7 @@
 # We stop dnsmasq because resolv configuration is not yet consistent
-unless %x(which resolvconf).empty? || ::File.exist?('/etc/dnsmasq.d/dns.conf')
-  service 'dnsmasq' do
-    action :stop
-  end
+service 'dnsmasq' do
+  only_if "which resolvconf && [ ! -f /etc/dnsmasq.d/dns.conf ]"
+  action :stop
 end
 
 include_recipe 'dnsmasq::default'
