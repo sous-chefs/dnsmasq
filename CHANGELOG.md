@@ -1,3 +1,8 @@
+## Unreleased:
+
+* update testing harness to use ServerSpec with Test Kitchen in lieu of MiniTest
+* add CONTRIBUTING documentation, update TESTING and README documentation
+
 ## v0.2.0:
 
 * duplicate options support for dhcp and dns conf files, driven by dhcp_options and dns_options attributes
