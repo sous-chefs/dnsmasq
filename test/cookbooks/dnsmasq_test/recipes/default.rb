@@ -1,9 +1,3 @@
-node.default[:dnsmasq][:enable_dns] = true
-node.default[:dnsmasq][:enable_dhcp] = true
-
-node.default[:dnsmasq][:dhcp] = {
-  'enable-tftp' => nil,
-  'interface' => 'eth1'
-}
-
+execute 'apt-get update' if platform_family?('debian')
+package 'bind-utils' if platform_family?('rhel', 'fedora')
 include_recipe 'dnsmasq'

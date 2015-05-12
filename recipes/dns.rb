@@ -1,10 +1,8 @@
 include_recipe 'dnsmasq::default'
 include_recipe 'dnsmasq::manage_hostsfile'
 
-dns_config = node[:dnsmasq][:dns].to_hash
-unless(node[:dnsmasq][:enable_dhcp])
-  dns_config['no-dhcp-interface='] = nil
-end
+dns_config = node['dnsmasq']['dns'].to_hash
+dns_config['no-dhcp-interface='] = nil unless node['dnsmasq']['enable_dhcp']
 
 template '/etc/dnsmasq.d/dns.conf' do
   source 'dynamic_config.erb'
@@ -13,5 +11,5 @@ template '/etc/dnsmasq.d/dns.conf' do
     :config => dns_config,
     :list => node['dnsmasq']['dns_options']
   )
-  notifies :restart, resources(:service => 'dnsmasq'), :immediately
+  notifies :restart, 'service[dnsmasq]', :immediately
 end
