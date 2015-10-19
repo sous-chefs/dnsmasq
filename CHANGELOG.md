@@ -1,5 +1,6 @@
 ## Unreleased:
 
+* default recipe now manages content of /etc/dnsmasq.conf to ensure /etc/dnsmasq.d configs are used
 * update testing harness to use ServerSpec with Test Kitchen in lieu of MiniTest
 * add CONTRIBUTING documentation, update TESTING and README documentation
 
