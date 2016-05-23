@@ -5,7 +5,11 @@ include_recipe 'dnsmasq::dhcp' if node['dnsmasq']['enable_dhcp']
 
 # Keep defaults for the package installed in the system (normally
 # a fully commented file), but make sure that conf-dir is set
-existingconf = Hash[File.readlines('/etc/dnsmasq.conf').select { |l| /^[^#\n]/.match(l) }.map { |l| l.strip.split '=' }]
+if File.exists?('/etc/dnsmasq.conf')
+  existingconf = Hash[File.readlines('/etc/dnsmasq.conf').select { |l| /^[^#\n]/.match(l) }.map { |l| l.strip.split '=' }]
+else
+  existingconf = {}
+end
 existingconf['conf-dir'] = '/etc/dnsmasq.d'
 
 template '/etc/dnsmasq.conf' do
