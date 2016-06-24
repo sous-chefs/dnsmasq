@@ -5,7 +5,7 @@ license 'Apache 2.0'
 description 'Installs and configures dnsmasq'
 version '0.2.0'
 
-depends 'hosts_file'
+depends 'hostsfile'
 
 %w(ubuntu debian redhat centos scientific oracle).each do |os|
   supports os
