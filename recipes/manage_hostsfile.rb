@@ -1,7 +1,10 @@
-begin
-  managed_hosts_bag = data_bag_item('dnsmasq', node['dnsmasq']['managed_hosts_bag'])
-rescue
-  Chef::Log.debug 'No data bag found for DNSMasq managed hosts file'
+managed_hosts_bag = nil
+if node['dnsmasq']['managed_hosts_bag']
+  begin
+    managed_hosts_bag = data_bag_item('dnsmasq', node['dnsmasq']['managed_hosts_bag'])
+  rescue
+    Chef::Log.debug 'No data bag found for DNSMasq managed hosts file'
+  end
 end
 
 managed_hosts = {}
