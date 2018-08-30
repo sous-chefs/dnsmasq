@@ -45,8 +45,10 @@ If you need manage your DNS hosts you may use the `dnsmasq` data bag `managed_ho
 ```json
 {
     "id": "managed_hosts",
-    "192.168.0.100": "www.google.com",
-    "192.168.0.101": ["www.yahoo.com", "www.altavista.com"]
+    "maps": {
+      "192.168.0.100": "www.google.com",
+      "192.168.0.101": ["www.yahoo.com", "www.altavista.com"]
+    }
 }
 ```
 
