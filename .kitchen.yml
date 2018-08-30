@@ -19,6 +19,7 @@ suites:
   - recipe[dnsmasq_test::default]
   attributes:
     dnsmasq:
+      managed_hosts_bag: false
       enable_dns: true
       enable_dhcp: true
       dhcp_options: ['dhcp-host=01:23:ab:cd:01:02,larry,10.0.0.10']
