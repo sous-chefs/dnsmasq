@@ -28,6 +28,26 @@ Includes the `default` recipe and writes the contents of the `node[:dnsmasq][:dh
 }
 ```
 
+## Docker / Other virtualization
+
+Some virtualization platforms such as docker handle security and permissions differently. dnsmasq does not have the ability to access NET_CAP_ADMIN in recent virtualization platforms, which is required for DHCP (this can cause dnsmasq to fail even when dhcp is not being used due to how it is loaded in memory). 
+
+A simple fix for this is to add the following to your attributes:
+
+```ruby
+default['dnsmasq']['dhcp']['user'] = 'root'
+```
+
+or
+
+```ruby
+'dnsmasq' => {
+  'dhcp' => {
+    'user' => 'root'
+  }
+}
+```
+
 ## dns
 
 Includes the `default` and `manage_hostsfile` recipes, then writes the content of the `node[:dnsmasq][:dns]` attribute hash to `/etc/dnsmasq.d/dns.conf`.
