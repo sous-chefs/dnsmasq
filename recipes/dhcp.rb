@@ -13,7 +13,7 @@ template '/etc/dnsmasq.d/dhcp.conf' do
   variables lazy {
     {
       :config => node['dnsmasq']['dhcp'].to_hash,
-      :list => node['dnsmasq']['dhcp_options']
+      :list => node['dnsmasq']['dhcp_options'],
     }
   }
   notifies :restart, 'service[dnsmasq]', :immediately
