@@ -2,6 +2,7 @@
 
 * update testing harness to use ServerSpec with Test Kitchen in lieu of MiniTest
 * add CONTRIBUTING documentation, update TESTING and README documentation
+* changed to circleci for testing
 
 ## v0.2.0:
 
