@@ -1,4 +1,3 @@
-HashSyntax:
-  Enabled: false
-LineLength:
-  Enabled: false
+AllCops:
+  Exclude:
+    - 'Dangerfile'
