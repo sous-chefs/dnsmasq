@@ -5,7 +5,7 @@ default['dnsmasq']['enable_dns'] = true
 default['dnsmasq']['dns'] = {
   'no-poll' => nil,
   'no-resolv' => nil,
-  'server' => '127.0.0.1'
+  'server' => '127.0.0.1',
 }
 default['dnsmasq']['dns_options'] = []
 default['dnsmasq']['managed_hosts'] = {}

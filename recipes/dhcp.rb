@@ -12,8 +12,8 @@ template '/etc/dnsmasq.d/dhcp.conf' do
   mode 0644
   variables lazy {
     {
-      :config => node['dnsmasq']['dhcp'].to_hash,
-      :list => node['dnsmasq']['dhcp_options']
+      config: node['dnsmasq']['dhcp'].to_hash,
+      list: node['dnsmasq']['dhcp_options'],
     }
   }
   notifies :restart, 'service[dnsmasq]', :immediately
