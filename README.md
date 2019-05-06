@@ -1,6 +1,12 @@
 # DNSMasq
 
-Install and configure dnsmasq. Depends on the [hosts_file cookbook](https://github.com/hw-cookbooks/hosts_file).
+[![Cookbook Version](https://img.shields.io/cookbook/v/dnsmasq.svg)](https://supermarket.chef.io/cookbooks/dnsmasq)
+[![Build Status](https://img.shields.io/circleci/project/github/sous-chefs/dnsmasq/master.svg)](https://circleci.com/gh/sous-chefs/dnsmasq)
+[![OpenCollective](https://opencollective.com/sous-chefs/backers/badge.svg)](#backers)
+[![OpenCollective](https://opencollective.com/sous-chefs/sponsors/badge.svg)](#sponsors)
+[![License](https://img.shields.io/badge/License-Apache%202.0-green.svg)](https://opensource.org/licenses/Apache-2.0)
+
+Install and configure dnsmasq.
 
 # Recipes
 
@@ -54,13 +60,14 @@ If you need manage your DNS hosts you may use the `dnsmasq` data bag `managed_ho
 
 ## Attributes
 
-* `[:dnsmasq][:enable_dns]` whether to enable the DNS service, default is `true`
-* `[:dnsmasq][:enable_dhcp]` whether to enabled the DHCP service, default is `false`
-* `[:dnsmasq][:managed_hosts]` hash of IPs and hostname/array of hostnames for the `manage_hostfile` recipe, default is empty
-* `[:dnsmasq][:managed_hosts_bag]` name of the data bag item, default is `managed_hosts`
-* `[:dnsmasq][:dhcp]` = hash of settings and values for the `/etc/dnsmasq.d/dhcp.conf`, default is empty
-* `[:dnsmasq][:dhcp_options]` = list of options to be added to the `/etc/dnsmasq.d/dhcp.conf` (ie. `['dhcp-host=80:ee:73:0a:fa:d9,crushinator,10.0.0.11']`), default is empty.
-* `[:dnsmasq][:dns]` hash of settings and values for the `/etc/dnsmasq.d/dns.conf`, defaults are
+- `[:dnsmasq][:enable_dns]` whether to enable the DNS service, default is `true`
+- `[:dnsmasq][:enable_dhcp]` whether to enabled the DHCP service, default is `false`
+- `[:dnsmasq][:managed_hosts]` hash of IPs and hostname/array of hostnames for the `manage_hostfile` recipe, default is empty
+- `[:dnsmasq][:managed_hosts_bag]` name of the data bag item, default is `managed_hosts`
+- `[:dnsmasq][:dhcp]` = hash of settings and values for the `/etc/dnsmasq.d/dhcp.conf`, default is empty
+- `[:dnsmasq][:dhcp_options]` = list of options to be added to the `/etc/dnsmasq.d/dhcp.conf` (ie. `['dhcp-host=80:ee:73:0a:fa:d9,crushinator,10.0.0.11']`), default is empty.
+- `[:dnsmasq][:dns]` hash of settings and values for the `/etc/dnsmasq.d/dns.conf`, defaults are
+
 ```ruby
 {
   'no-poll' => nil,
@@ -68,7 +75,8 @@ If you need manage your DNS hosts you may use the `dnsmasq` data bag `managed_ho
   'server' => '127.0.0.1'
 }
 ```
-* `[:dnsmasq][:dns_options]` = list of options to be added to the `/etc/dnsmasq.d/dns.conf`, default is empty.
+
+- `[:dnsmasq][:dns_options]` = list of options to be added to the `/etc/dnsmasq.d/dns.conf`, default is empty.
 
 ## Testing
 
@@ -76,4 +84,29 @@ Please refer to the [TESTING file](TESTING.md) to see instructions for testing t
 
 # Repo:
 
-* https://github.com/hw-cookbooks/dnsmasq
+- https://github.com/sous-chefs/dnsmasq
+
+## Contributors
+
+This project exists thanks to all the people who [contribute.](https://opencollective.com/sous-chefs/contributors.svg?width=890&button=false)
+
+### Backers
+
+Thank you to all our backers!
+
+![https://opencollective.com/sous-chefs#backers](https://opencollective.com/sous-chefs/backers.svg?width=600&avatarHeight=40)
+
+### Sponsors
+
+Support this project by becoming a sponsor. Your logo will show up here with a link to your website.
+
+![https://opencollective.com/sous-chefs/sponsor/0/website](https://opencollective.com/sous-chefs/sponsor/0/avatar.svg?avatarHeight=100)
+![https://opencollective.com/sous-chefs/sponsor/1/website](https://opencollective.com/sous-chefs/sponsor/1/avatar.svg?avatarHeight=100)
+![https://opencollective.com/sous-chefs/sponsor/2/website](https://opencollective.com/sous-chefs/sponsor/2/avatar.svg?avatarHeight=100)
+![https://opencollective.com/sous-chefs/sponsor/3/website](https://opencollective.com/sous-chefs/sponsor/3/avatar.svg?avatarHeight=100)
+![https://opencollective.com/sous-chefs/sponsor/4/website](https://opencollective.com/sous-chefs/sponsor/4/avatar.svg?avatarHeight=100)
+![https://opencollective.com/sous-chefs/sponsor/5/website](https://opencollective.com/sous-chefs/sponsor/5/avatar.svg?avatarHeight=100)
+![https://opencollective.com/sous-chefs/sponsor/6/website](https://opencollective.com/sous-chefs/sponsor/6/avatar.svg?avatarHeight=100)
+![https://opencollective.com/sous-chefs/sponsor/7/website](https://opencollective.com/sous-chefs/sponsor/7/avatar.svg?avatarHeight=100)
+![https://opencollective.com/sous-chefs/sponsor/8/website](https://opencollective.com/sous-chefs/sponsor/8/avatar.svg?avatarHeight=100)
+![https://opencollective.com/sous-chefs/sponsor/9/website](https://opencollective.com/sous-chefs/sponsor/9/avatar.svg?avatarHeight=100)
