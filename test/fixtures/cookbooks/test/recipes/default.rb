@@ -1,3 +1,5 @@
-execute 'apt-get update' if platform_family?('debian')
+apt_update
+
 package 'bind-utils' if platform_family?('rhel', 'fedora')
+
 include_recipe 'dnsmasq'
