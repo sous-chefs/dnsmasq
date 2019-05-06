@@ -5,29 +5,29 @@ provisioner:
   name: chef_zero
 
 platforms:
-- name: centos-6
-- name: centos-7
-- name: debian-8
-- name: debian-9
-- name: ubuntu-16.04
-- name: ubuntu-18.04
-- name: amazonlinux-2
+  - name: centos-6
+  - name: centos-7
+  - name: debian-8
+  - name: debian-9
+  - name: ubuntu-16.04
+  - name: ubuntu-18.04
+  - name: amazonlinux-2
 
 suites:
-- name: default
-  run_list:
-  - recipe[test::default]
-  attributes:
-    dnsmasq:
-      managed_hosts_bag: false
-      enable_dns: true
-      enable_dhcp: true
-      dhcp_options: ['dhcp-host=01:23:ab:cd:01:02,larry,10.0.0.10']
-      dns:
-        server: '8.8.8.8'
-      dhcp:
-        dhcp-range: 'eth1,10.0.0.5,10.0.0.15,12h'
-        domain: 'test.lab'
-        tftp-root: '/var/lib/tftpboot'
-        enable-tftp: null
-        interface: 'eth1'
+  - name: default
+    run_list:
+      - recipe[test::default]
+    attributes:
+      dnsmasq:
+        managed_hosts_bag: false
+        enable_dns: true
+        enable_dhcp: true
+        dhcp_options: ['dhcp-host=01:23:ab:cd:01:02,larry,10.0.0.10']
+        dns:
+          server: '8.8.8.8'
+        dhcp:
+          dhcp-range: 'eth1,10.0.0.5,10.0.0.15,12h'
+          domain: 'test.lab'
+          tftp-root: '/var/lib/tftpboot'
+          enable-tftp: null
+          interface: 'eth1'

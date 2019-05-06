@@ -1,10 +1,9 @@
 ---
 lint_and_unit: &lint_and_unit
-- delivery
-- danger
-- lint-yaml
-- lint-markdown
-
+  - delivery
+  - danger
+  - lint-yaml
+  - lint-markdown
 
 version: 2.1
 
