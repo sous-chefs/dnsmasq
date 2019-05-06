@@ -8,9 +8,10 @@
 
 Install and configure dnsmasq.
 
-# Recipes
+## Recipes
 
-## default
+### default
+
 Installs the `dnsmasq` package. Depending on the `[:dnsmasq][:enable_dns]` and `[:dnsmasq][:enable_dhcp]` attributes it includes the `dns` and `dhcp` recipes respectively.
 
 ## dhcp
@@ -34,15 +35,15 @@ Includes the `default` recipe and writes the contents of the `node[:dnsmasq][:dh
 }
 ```
 
-## dns
+### dns
 
 Includes the `default` and `manage_hostsfile` recipes, then writes the content of the `node[:dnsmasq][:dns]` attribute hash to `/etc/dnsmasq.d/dns.conf`.
 
-## manage_hostsfile
+### manage_hostsfile
 
 Loads the `dnsmasq` data bag `managed_hosts` item and merges it with any nodes in the `[:dnsmasq][:managed_hosts]` attribute, then writes them out to `/etc/hosts/` via the `hosts_file` cookbook.
 
-# Usage
+## Usage
 
 ## Data Bag
 
@@ -81,10 +82,6 @@ If you need manage your DNS hosts you may use the `dnsmasq` data bag `managed_ho
 ## Testing
 
 Please refer to the [TESTING file](TESTING.md) to see instructions for testing this cookbook. It is currently tested on the following platforms: CentOS 5.9, CentOS 6.4, Debian 7.1, Ubuntu 10.04, 12.04 and 13.04.
-
-# Repo:
-
-- https://github.com/sous-chefs/dnsmasq
 
 ## Contributors
 
