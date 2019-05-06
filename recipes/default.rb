@@ -1,3 +1,9 @@
+if platform?('ubuntu') && node['platform_version'] >= '18.04'
+  service 'systemd-resolved' do
+    action :stop
+  end
+end
+
 package 'dnsmasq'
 user 'dnsmasq'
 
