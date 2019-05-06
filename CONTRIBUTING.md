@@ -1,6 +1,21 @@
-1. Fork the repository using Github.
-1. Checkout a named feature branch created from the `develop` branch.
-1. Write tests using chefspec or serverspec as appropriate.
-1. Complete modifications or corrections.
-1. Run the tests, ensuring they all pass.
-1. Submit a Pull Request to the `develop` branch using Github.
+# Contributing
+
+## Branches
+
+### `master` branch
+
+The master branch is the current committed changes. These changes may not yet be released although we try to release often.
+
+## Tags
+
+All releases are tagged in git. To see the releases available to you see the changelog or the tags directly.
+
+## Pull requests
+
+- <https://github.com/sous-chefs/dnsmasq/pulls>
+
+## Issues
+
+Need to report an issue? Use the github issues:
+
+- <https://github.com/sous-chefs/dnsmasq/issues>
