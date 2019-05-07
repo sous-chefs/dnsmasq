@@ -2,6 +2,10 @@
 
 This file is used to list changes made in each version of the Dnsmasq cookbooks.
 
+## v0.3.1
+
+- Switch testing from serverspec to inspec
+
 ## v0.3.0
 
 - Require Chef 14 as it has builtin hotfle management

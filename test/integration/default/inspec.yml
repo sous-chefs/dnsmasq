@@ -1,0 +1,7 @@
+---
+name: dnsmasq-integration-tests
+title: Integration tests for dnsmasq cookbook
+summary: This InSpec profile contains integration tests for dnsmasq cookbook
+supports:
+  - os-family: linux
+  - os-family: bsd

@@ -1,8 +1,17 @@
 ---
-driver_plugin: vagrant
+driver:
+  name: vagrant
 
 provisioner:
-  name: chef_zero
+  name: chef_solo
+  product_name: chef
+  enforce_idempotency: true
+  multiple_converge: 2
+  solo_rb:
+    treat_deprecation_warnings_as_errors: true
+
+verifier:
+  name: inspec
 
 platforms:
   - name: centos-6
