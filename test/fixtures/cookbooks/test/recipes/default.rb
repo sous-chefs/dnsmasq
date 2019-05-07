@@ -1,7 +1,7 @@
 apt_update
 
 p = value_for_platform_family(
-  %w(rhel fedora suse) => 'bind-utils',
+  default: 'bind-utils',
   'debian' => 'dnsutils'
 )
 
