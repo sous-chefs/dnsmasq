@@ -9,6 +9,8 @@ source_url        'https://github.com/sous-chefs/dnsmasq'
 issues_url        'https://github.com/sous-chefs/dnsmasq/issues'
 version           '0.3.1'
 
+depends 'line'
+
 %w(ubuntu debian redhat centos oracle).each do |os|
   supports os
 end

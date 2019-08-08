@@ -1,6 +1,12 @@
 if platform?('ubuntu') && node['platform_version'] >= '18.04'
+  replace_or_add 'Fix systemd-resolved conflict' do
+    path '/etc/systemd/resolved.conf'
+    pattern 'DNSStubListener=*'
+    line 'DNSStubListener=no'
+  end
+
   service 'systemd-resolved' do
-    action :stop
+    action :restart
   end
 end
 
