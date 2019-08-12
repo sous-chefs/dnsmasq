@@ -3,10 +3,11 @@ if platform?('ubuntu') && node['platform_version'] >= '18.04'
     path '/etc/systemd/resolved.conf'
     pattern 'DNSStubListener=*'
     line 'DNSStubListener=no'
+    notifies :restart, 'service[systemd-resolved]', :immediately
   end
 
   service 'systemd-resolved' do
-    action :restart
+    action :nothing
   end
 end
 
