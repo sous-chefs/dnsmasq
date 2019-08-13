@@ -4,6 +4,8 @@ This file is used to list changes made in each version of the Dnsmasq cookbooks.
 
 ## Unreleased
 
+## v0.3.2
+
 - Fix systemd-resolved conflict (fixes #35)
 
 ## v0.3.1
