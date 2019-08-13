@@ -1,8 +1,9 @@
 if platform?('ubuntu') && node['platform_version'] >= '18.04'
-  replace_or_add 'Fix systemd-resolved conflict' do
-    path '/etc/systemd/resolved.conf'
-    pattern 'DNSStubListener=*'
-    line 'DNSStubListener=no'
+  directory '/etc/systemd/resolved.conf.d'
+
+  file 'Fix systemd-resolved conflict' do
+    path '/etc/systemd/resolved.conf.d/dnsmasq.conf'
+    content "[Resolve]\nDNSStubListener=no"
     notifies :restart, 'service[systemd-resolved]', :immediately
   end
 
