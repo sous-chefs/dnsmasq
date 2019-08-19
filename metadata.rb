@@ -7,7 +7,7 @@ long_description  IO.read(File.join(File.dirname(__FILE__), 'README.md'))
 chef_version      '>= 14.0'
 source_url        'https://github.com/sous-chefs/dnsmasq'
 issues_url        'https://github.com/sous-chefs/dnsmasq/issues'
-version           '0.3.1'
+version           '0.3.2'
 
 %w(ubuntu debian redhat centos oracle).each do |os|
   supports os
