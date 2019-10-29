@@ -6,23 +6,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
-
-
 ## [0.3.2] - 2019-08-13
 
 ### Fixed
 
 - systemd-resolved conflict (fixes #35)
 
-
-
 ## [0.3.1] - 2019-05-07
 
 ### Changed
 
 - Switch testing from serverspec to inspec
-
-
 
 ## [0.3.0] - 2019-05-06
 
@@ -36,8 +30,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - add CONTRIBUTING documentation, update TESTING and README documentation
 
-
-
 ## [0.2.0] - 2013-12-23
 
 ### Added
@@ -48,9 +40,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 
 - duplicate options support for dhcp and dns conf files, driven by dhcp_options and dns_options attributes
+
 **Huge thanks to @mattray!**
-
-
 
 ## [0.1.2] - 2013-12-23
 
