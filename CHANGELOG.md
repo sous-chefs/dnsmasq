@@ -6,6 +6,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+- Fix cookstyle warnings in the Dangerfile
+
 ## [0.3.2] - 2019-08-13
 
 ### Fixed
