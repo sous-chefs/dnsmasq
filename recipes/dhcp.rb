@@ -5,7 +5,7 @@ directory node['dnsmasq']['dhcp']['tftp-root'] do
   mode '755'
   recursive true
   action :create
-end if node['dnsmasq']['dhcp']['tftp-root'] # ~FC023
+end if node['dnsmasq']['dhcp']['tftp-root']
 
 template '/etc/dnsmasq.d/dhcp.conf' do
   source 'dynamic_config.erb'
