@@ -2,6 +2,11 @@
 
 This file is used to list changes made in each version of the Dnsmasq cookbooks.
 
+## Unreleased
+
+- Chef 17 compatibility
+- Minimum version of Chef-Infra 15.3
+
 ## 0.3.4
 
 - resolved cookstyle error: recipes/dhcp.rb:8:44 convention: `Layout/TrailingWhitespace`
@@ -30,8 +35,10 @@ This file is used to list changes made in each version of the Dnsmasq cookbooks.
 ## [0.2.0] - 2013-12-23
 
 - TFTP support
-- Test Kitchen 1.0 coverage for Red Hat 5.9, 6.4, Debian 7.1 and Ubuntu 10.04, 12.04 and 13.04
-- duplicate options support for dhcp and dns conf files, driven by dhcp_options and dns_options attributes
+- Test Kitchen 1.0 coverage for Red Hat 5.9, 6.4, Debian 7.1
+ and Ubuntu 10.04, 12.04 and 13.04
+- duplicate options support for dhcp and dns conf files,
+ driven by dhcp_options and dns_options attributes
 
 **Huge thanks to @mattray!**
 
