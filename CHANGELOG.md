@@ -2,7 +2,7 @@
 
 This file is used to list changes made in each version of the Dnsmasq cookbooks.
 
-## Unreleased
+## 1.0.0 - *2021-05-24*
 
 - Chef 17 compatibility
 - Minimum version of Chef-Infra 15.3
