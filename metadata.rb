@@ -7,7 +7,7 @@ description       'Installs and configures dnsmasq'
 chef_version      '>= 15.3'
 source_url        'https://github.com/sous-chefs/dnsmasq'
 issues_url        'https://github.com/sous-chefs/dnsmasq/issues'
-version           '1.0.0'
+version           '1.0.1'
 
 %w(ubuntu debian redhat centos oracle).each do |os|
   supports os
