@@ -12,3 +12,5 @@ version           '1.0.2'
 %w(ubuntu debian redhat centos oracle).each do |os|
   supports os
 end
+
+depends 'hostsfile', '>= 3.0.1'
