@@ -13,4 +13,4 @@ version           '1.0.2'
   supports os
 end
 
-depends 'hostsfile', '>= 3.0.1'
+depends 'hostsfile'
