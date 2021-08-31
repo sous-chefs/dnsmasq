@@ -2,6 +2,8 @@
 
 This file is used to list changes made in each version of the Dnsmasq cookbooks.
 
+## Unreleased
+
 ## 1.1.0 - *2021-08-31*
 
 - Standardise the tested platforms
