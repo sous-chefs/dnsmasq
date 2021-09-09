@@ -6,6 +6,10 @@ This file is used to list changes made in each version of the Dnsmasq cookbooks.
 
 - Fix resource name typo and added dependency cookbook for hostsfile_entry (hostsfile)
 
+## 1.1.0 - *2021-08-31*
+
+- Standardise the tested platforms
+
 ## 1.0.2 - *2021-08-31*
 
 - Standardise files with files in sous-chefs/repo-management

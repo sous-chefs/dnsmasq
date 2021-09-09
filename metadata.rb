@@ -7,10 +7,13 @@ description       'Installs and configures dnsmasq'
 chef_version      '>= 15.3'
 source_url        'https://github.com/sous-chefs/dnsmasq'
 issues_url        'https://github.com/sous-chefs/dnsmasq/issues'
-version           '1.0.2'
-
-%w(ubuntu debian redhat centos oracle).each do |os|
-  supports os
-end
+version           '1.1.0'
 
 depends 'hostsfile'
+
+supports 'ubuntu'
+supports 'debian'
+supports 'redhat'
+supports 'centos'
+supports 'oracle'
+
