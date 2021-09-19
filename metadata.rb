@@ -16,4 +16,3 @@ supports 'debian'
 supports 'redhat'
 supports 'centos'
 supports 'oracle'
-
