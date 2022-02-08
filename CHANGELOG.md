@@ -4,6 +4,8 @@ This file is used to list changes made in each version of the Dnsmasq cookbooks.
 
 ## Unreleased
 
+- Remove delivery folder
+
 ## 1.1.0 - *2021-08-31*
 
 - Standardise the tested platforms
