@@ -2,6 +2,8 @@
 
 This file is used to list changes made in each version of the Dnsmasq cookbooks.
 
+## Unreleased
+
 ## 1.1.2 - *2023-03-02*
 
 ## 1.1.1 - *2023-02-14*
