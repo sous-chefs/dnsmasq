@@ -2,7 +2,13 @@
 
 This file is used to list changes made in each version of the Dnsmasq cookbooks.
 
-## Unreleased
+## 1.1.3 - *2023-04-01*
+
+## 1.1.2 - *2023-03-02*
+
+## 1.1.1 - *2023-02-14*
+
+- Remove delivery folder
 
 - Fix resource name typo and added dependency cookbook for hostsfile_entry (hostsfile)
 
