@@ -2,7 +2,7 @@
 
 This file is used to list changes made in each version of the Dnsmasq cookbooks.
 
-## Unreleased
+## 1.1.9 - *2023-09-26*
 
 - Fix typo in manage_hostsfile recipe
 
