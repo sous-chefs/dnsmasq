@@ -7,7 +7,7 @@ description       'Installs and configures dnsmasq'
 chef_version      '>= 15.3'
 source_url        'https://github.com/sous-chefs/dnsmasq'
 issues_url        'https://github.com/sous-chefs/dnsmasq/issues'
-version           '1.1.8'
+version           '1.1.9'
 
 supports 'ubuntu'
 supports 'debian'
