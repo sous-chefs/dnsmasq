@@ -11,7 +11,7 @@ default['dnsmasq']['dns_options'] = []
 default['dnsmasq']['managed_hosts'] = {}
 default['dnsmasq']['managed_hosts_bag'] = 'managed_hosts'
 default['dnsmasq']['user'] = 'dnsmasq'
-default['dnsmasq']['stublistener'] = if platform?('ubuntu') && node['platform_version'].to_i == 20
+default['dnsmasq']['stublistener'] = if platform?('ubuntu') && node['platform_version'].to_i <= 20
   'yes'
 else
   'no'
