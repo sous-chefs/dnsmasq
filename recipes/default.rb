@@ -1,4 +1,5 @@
 if platform?('ubuntu') && node['platform_version'] >= '18.04'
+  Chef::Log.debug("Ubuntu 18.04 or higher detected, configuring systemd-resolved with DNSStubListener option at #{node['dnsmasq']['stublistener']}")
   directory '/etc/systemd/resolved.conf.d'
 
   file 'Fix systemd-resolved conflict' do
