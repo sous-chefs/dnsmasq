@@ -3,7 +3,7 @@ if platform?('ubuntu') && node['platform_version'] >= '18.04'
 
   file 'Fix systemd-resolved conflict' do
     path '/etc/systemd/resolved.conf.d/dnsmasq.conf'
-    content "[Resolve]\nDNSStubListener=no"
+    content "[Resolve]\nDNSStubListener=#{node['dnsmasq']['stublistener']}"
     notifies :restart, 'service[systemd-resolved]', :immediately
   end
 
