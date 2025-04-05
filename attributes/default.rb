@@ -12,7 +12,7 @@ default['dnsmasq']['managed_hosts'] = {}
 default['dnsmasq']['managed_hosts_bag'] = 'managed_hosts'
 default['dnsmasq']['user'] = 'dnsmasq'
 default['dnsmasq']['stublistener'] = if platform?('ubuntu') && node['platform_version'].to_i <= 20
-                                       'yes'
+                                       node['dnsmasq']['enable_dhcp'] ? 'no' : 'yes'
                                      else
                                        'no'
                                      end
