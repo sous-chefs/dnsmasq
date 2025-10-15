@@ -2,6 +2,13 @@
 
 This file is used to list changes made in each version of the Dnsmasq cookbooks.
 
+## [1.1.15](https://github.com/sous-chefs/dnsmasq/compare/1.1.14...v1.1.15) (2025-10-15)
+
+
+### Bug Fixes
+
+* **ci:** Update workflows to use release pipeline ([#108](https://github.com/sous-chefs/dnsmasq/issues/108)) ([d2454c2](https://github.com/sous-chefs/dnsmasq/commit/d2454c24f08f666d9d0193c5dcc30cd6174040e5))
+
 ## 1.1.9 - *2023-09-26*
 
 * Fix typo in manage_hostsfile recipe
