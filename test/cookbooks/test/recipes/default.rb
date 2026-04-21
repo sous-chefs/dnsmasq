@@ -1,6 +1,12 @@
 # frozen_string_literal: true
 
-apt_update if platform_family?('debian')
+apt_update 'update package cache' do
+  retries 30
+  retry_delay 2
+  frequency 86_400
+  action :periodic
+  only_if { platform_family?('debian') }
+end
 
 package value_for_platform_family(
   default: 'bind-utils',
@@ -21,10 +27,10 @@ dnsmasq 'default' do
   )
   dhcp_options ['dhcp-host=01:23:ab:cd:01:02,larry,10.0.0.10']
   dhcp_config(
-    'dhcp-range' => 'eth1,10.0.0.5,10.0.0.15,12h',
+    'dhcp-range' => '10.0.0.5,10.0.0.15,12h',
     'domain' => 'test.lab',
     'tftp-root' => '/var/lib/tftpboot',
     'enable-tftp' => nil,
-    'interface' => 'eth1'
+    'except-interface' => 'lo'
   )
 end
