@@ -12,30 +12,35 @@ provisioner:
 verifier:
   name: inspec
 
+x-run_lists:
+  default: &default_run_list
+    - recipe[test::default]
+
+x-attributes:
+  default: &default_attributes
+    dnsmasq_test:
+      enabled: true
+
+x-verifiers:
+  default: &default_verifier
+    inspec_tests:
+      - path: test/integration/default
+
 platforms:
-  - amazonlinux-2
-  - debian-9
-  - debian-10
-  - centos-7
-  - centos-8
-  - ubuntu-1804
-  - ubuntu-2004
+  - name: almalinux-9
+  - name: amazonlinux-2023
+  - name: centos-stream-9
+  - name: debian-11
+  - name: debian-12
+  - name: fedora-latest
+  - name: oraclelinux-8
+  - name: oraclelinux-9
+  - name: rockylinux-9
+  - name: ubuntu-2204
+  - name: ubuntu-2404
 
 suites:
   - name: default
-    run_list:
-      - recipe[test::default]
-    attributes:
-      dnsmasq:
-        managed_hosts_bag: false
-        enable_dns: true
-        enable_dhcp: true
-        dhcp_options: ['dhcp-host=01:23:ab:cd:01:02,larry,10.0.0.10']
-        dns:
-          server: '8.8.8.8'
-        dhcp:
-          dhcp-range: 'eth1,10.0.0.5,10.0.0.15,12h'
-          domain: 'test.lab'
-          tftp-root: '/var/lib/tftpboot'
-          enable-tftp: null
-          interface: 'eth1'
+    run_list: *default_run_list
+    attributes: *default_attributes
+    verifier: *default_verifier

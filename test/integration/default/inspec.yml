@@ -1,7 +1,7 @@
 ---
-name: dnsmasq-integration-tests
-title: Integration tests for dnsmasq cookbook
-summary: This InSpec profile contains integration tests for dnsmasq cookbook
-supports:
-  - os-family: linux
-  - os-family: bsd
+name: default
+title: dnsmasq default integration tests
+maintainer: Sous Chefs
+license: Apache-2.0
+summary: Default integration tests for the dnsmasq cookbook
+version: 1.0.0
