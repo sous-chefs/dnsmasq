@@ -54,10 +54,10 @@ Manages `/etc/hosts` entries for `dnsmasq`, optionally merging a data bag item.
 
 Detailed resource documentation lives in:
 
-- `documentation/dnsmasq_dnsmasq.md`
-- `documentation/dnsmasq_dns.md`
-- `documentation/dnsmasq_dhcp.md`
-- `documentation/dnsmasq_managed_hosts.md`
+* `documentation/dnsmasq_dnsmasq.md`
+* `documentation/dnsmasq_dns.md`
+* `documentation/dnsmasq_dhcp.md`
+* `documentation/dnsmasq_managed_hosts.md`
 
 ## Data Bag
 
@@ -76,10 +76,10 @@ and the `managed_hosts` item by default. It takes the form:
 
 ## Notes
 
-- This cookbook no longer uses root-level recipes or attributes.
-- Configuration defaults now live on resource properties instead of node
+* This cookbook no longer uses root-level recipes or attributes.
+* Configuration defaults now live on resource properties instead of node
   attributes.
-- Managed hosts still use the `hostsfile` cookbook under the hood.
+* Managed hosts still use the `hostsfile` cookbook under the hood.
 
 ## Testing
 
