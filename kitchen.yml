@@ -13,13 +13,13 @@ verifier:
   name: inspec
 
 platforms:
-  - amazonlinux-2
-  - debian-9
-  - debian-10
-  - centos-7
-  - centos-8
-  - ubuntu-1804
-  - ubuntu-2004
+  - name: amazonlinux-2
+  - name: debian-9
+  - name: debian-10
+  - name: centos-7
+  - name: centos-8
+  - name: ubuntu-18.04
+  - name: ubuntu-20.04
 
 suites:
   - name: default
@@ -39,3 +39,5 @@ suites:
           tftp-root: '/var/lib/tftpboot'
           enable-tftp: null
           interface: 'eth1'
+
+  - name: nodhcp
