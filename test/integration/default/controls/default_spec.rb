@@ -37,10 +37,10 @@ control 'dnsmasq-config-01' do
   describe file('/etc/dnsmasq.d/dhcp.conf') do
     it { should exist }
     its('content') { should match(/^dhcp-host=01:23:ab:cd:01:02,larry,10\.0\.0\.10$/) }
-    its('content') { should match(/^dhcp-range=eth1,10\.0\.0\.5,10\.0\.0\.15,12h$/) }
+    its('content') { should match(/^dhcp-range=10\.0\.0\.5,10\.0\.0\.15,12h$/) }
     its('content') { should match(/^domain=test.lab$/) }
     its('content') { should match(/^enable-tftp$/) }
-    its('content') { should match(/^interface=eth1$/) }
+    its('content') { should match(/^except-interface=lo$/) }
     its('content') { should match(%r{^tftp-root=/var/lib/tftpboot$}) }
   end
 
