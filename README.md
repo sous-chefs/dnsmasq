@@ -8,6 +8,17 @@
 
 Install and configure dnsmasq.
 
+## Breaking Change
+
+Upgrading from older versions of this cookbook is a breaking change. The
+custom-resource release removes the legacy `recipes/` and `attributes/`
+interface, so existing `include_recipe 'dnsmasq::...'` calls and
+`node['dnsmasq']` attribute overrides are no longer the supported upgrade path.
+
+Before you roll this version out, rewrite those recipe and attribute-based
+configurations to use the `dnsmasq`, `dnsmasq_dns`, `dnsmasq_dhcp`, or
+`dnsmasq_managed_hosts` resources documented in [migration.md](migration.md).
+
 ## Maintainers
 
 This cookbook is maintained by the Sous Chefs. The Sous Chefs are a community of Chef cookbook maintainers working together to maintain important cookbooks. If you’d like to know more please visit [sous-chefs.org](https://sous-chefs.org/) or come chat with us on the Chef Community Slack in [#sous-chefs](https://chefcommunity.slack.com/messages/C2V7B88SF).
