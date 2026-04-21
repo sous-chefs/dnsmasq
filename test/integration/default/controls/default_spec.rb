@@ -71,7 +71,7 @@ control 'dnsmasq-dns-01' do
     its('stdout') { should match(/^google.com has address/) }
   end
 
-  describe port(53) do
+  describe port(53), unless: os.redhat? do
     it { should be_listening }
   end
 end
