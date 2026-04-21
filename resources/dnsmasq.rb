@@ -103,6 +103,48 @@ action :create do
   end
 
   service new_resource.service_name do
+    supports status: true, restart: true
     action %i(enable start)
+  end
+end
+
+action :delete do
+  service new_resource.service_name do
+    supports status: true, restart: true
+    action %i(stop disable)
+  end
+
+  file ::File.join(new_resource.config_directory, 'dns.conf') do
+    action :delete
+  end
+
+  file ::File.join(new_resource.config_directory, 'dhcp.conf') do
+    action :delete
+  end
+
+  directory new_resource.config_directory do
+    recursive true
+    action :delete
+  end
+
+  manage_systemd_resolved = if new_resource.manage_systemd_resolved.nil?
+                              default_manage_systemd_resolved?
+                            else
+                              new_resource.manage_systemd_resolved
+                            end
+
+  if manage_systemd_resolved
+    file '/etc/systemd/resolved.conf.d/dnsmasq.conf' do
+      action :delete
+      notifies :restart, 'service[systemd-resolved]', :immediately
+    end
+
+    service 'systemd-resolved' do
+      action :nothing
+    end
+  end
+
+  package new_resource.package_name do
+    action :remove
   end
 end

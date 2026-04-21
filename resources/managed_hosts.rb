@@ -44,7 +44,7 @@ action :delete do
     data_bag_item_name: new_resource.data_bag_item
   ).each_key do |ip|
     hostsfile_entry ip do
-      action :delete
+      action :remove
       comment new_resource.comment
       notifies :restart, "service[#{new_resource.service_name}]", :delayed
     end
