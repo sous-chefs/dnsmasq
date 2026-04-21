@@ -4,20 +4,20 @@ Manages `dnsmasq`-related `/etc/hosts` entries through the `hostsfile` cookbook.
 
 ## Actions
 
-| Action    | Description |
-|-----------|-------------|
-| `:create` | Creates or updates managed hosts entries and restarts `dnsmasq` if needed (default) |
-| `:delete` | Removes managed hosts entries and restarts `dnsmasq` if needed |
+| Action    | Description                                 |
+| --------- | ------------------------------------------- |
+| `:create` | Creates managed hosts entries for `dnsmasq` |
+| `:delete` | Removes managed hosts entries for `dnsmasq` |
 
 ## Properties
 
-| Property | Type | Default | Description |
-|----------|------|---------|-------------|
-| `service_name` | String | `'dnsmasq'` | Service to notify on hosts changes |
-| `entries` | Hash | `{}` | Explicit IP-to-hostname mappings |
-| `data_bag` | String, NilClass, FalseClass | `'dnsmasq'` | Data bag name to load additional mappings from |
-| `data_bag_item` | String, NilClass, FalseClass | `'managed_hosts'` | Data bag item to load additional mappings from |
-| `comment` | String | `'dnsmasq managed entry'` | Comment added to managed `/etc/hosts` lines |
+| Property        | Type                         | Default                   | Description                        |
+| --------------- | ---------------------------- | ------------------------- | ---------------------------------- |
+| `service_name`  | String                       | `'dnsmasq'`               | Service notified on hosts changes  |
+| `entries`       | Hash                         | `{}`                      | Explicit IP-to-hostname mappings   |
+| `data_bag`      | String, NilClass, FalseClass | `'dnsmasq'`               | Data bag name for extra mappings   |
+| `data_bag_item` | String, NilClass, FalseClass | `'managed_hosts'`         | Data bag item for extra mappings   |
+| `comment`       | String                       | `'dnsmasq managed entry'` | Comment for `/etc/hosts` lines     |
 
 ## Examples
 
