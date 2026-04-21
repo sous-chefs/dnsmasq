@@ -14,10 +14,10 @@ package-based, systemd-managed Linux install.
 
 ## Package Availability
 
-* Debian packages `dnsmasq`, `dnsmasq-base`, and `dnsmasq-utils` are available
-  in current Debian releases. `dnsmasq-base` is published for multiple
-  architectures including `amd64`, `arm64`, `armel`, `armhf`, `i386`,
-  `ppc64el`, `riscv64`, and `s390x`.
+* Debian 12 (bookworm) and Debian 13 (trixie, released 2025-08-09) package
+  `dnsmasq`, `dnsmasq-base`, and `dnsmasq-utils`. `dnsmasq-base` is published
+  for multiple architectures including `amd64`, `arm64`, `armel`, `armhf`,
+  `i386`, `ppc64el`, `riscv64`, and `s390x`.
 * Ubuntu publishes `dnsmasq` and `dnsmasq-base` in `universe` for current LTS
   releases including 22.04 and 24.04. `dnsmasq-base` is available on `amd64`,
   `arm64`, `armhf`, `ppc64el`, `riscv64`, and `s390x`.
@@ -30,10 +30,11 @@ package-based, systemd-managed Linux install.
 
 ## Platform Constraints
 
-* Ubuntu support in this cookbook should start at 22.04. Ubuntu 20.04 is past
+* Ubuntu support in this cookbook starts at 22.04. Ubuntu 20.04 is past
   standard support, and `dnsmasq` lives in `universe`, which has weaker support
   guarantees than `main`.
-* Debian 9 and Debian 10 are EOL and should not remain in Kitchen or CI.
+* Debian 11 (Bullseye) standard EOL was 2024-08-14 and should not remain in
+  Kitchen or CI. Debian 12 and 13 are the current supported releases.
 * CentOS 7 and CentOS Stream 8 are EOL and should not remain in Kitchen or CI.
 * openSUSE Leap is intentionally not supported by this cookbook after the
   migration. The current openSUSE package index shows no official `dnsmasq`
