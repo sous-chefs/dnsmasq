@@ -27,4 +27,18 @@ describe 'dnsmasq_dhcp' do
   it { is_expected.to create_template('/etc/dnsmasq.d/dhcp.conf') }
   it { is_expected.to render_file('/etc/dnsmasq.d/dhcp.conf').with_content(/^dhcp-range=eth1,10\.0\.0\.5,10\.0\.0\.15,12h$/) }
   it { is_expected.to render_file('/etc/dnsmasq.d/dhcp.conf').with_content(/^dhcp-host=01:23:ab:cd:01:02,larry,10\.0\.0\.10$/) }
+
+  context 'action :delete' do
+    recipe do
+      service 'dnsmasq' do
+        action :nothing
+      end
+
+      dnsmasq_dhcp 'default' do
+        action :delete
+      end
+    end
+
+    it { is_expected.to delete_file('/etc/dnsmasq.d/dhcp.conf') }
+  end
 end

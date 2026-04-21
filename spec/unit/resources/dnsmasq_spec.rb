@@ -47,4 +47,19 @@ describe 'dnsmasq' do
       expect(chef_run).to_not render_file('/etc/dnsmasq.d/dns.conf').with_content(/^no-dhcp-interface=$/)
     end
   end
+
+  context 'action :delete' do
+    recipe do
+      dnsmasq 'default' do
+        action :delete
+      end
+    end
+
+    it { is_expected.to stop_service('dnsmasq') }
+    it { is_expected.to disable_service('dnsmasq') }
+    it { is_expected.to delete_file('/etc/dnsmasq.d/dns.conf') }
+    it { is_expected.to delete_file('/etc/dnsmasq.d/dhcp.conf') }
+    it { is_expected.to delete_directory('/etc/dnsmasq.d') }
+    it { is_expected.to remove_package('dnsmasq') }
+  end
 end

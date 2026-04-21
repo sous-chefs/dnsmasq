@@ -4,9 +4,29 @@ control 'dnsmasq-service-01' do
   impact 1.0
   title 'dnsmasq service is enabled and running'
 
-  describe service('dnsmasq') do
+  describe systemd_service('dnsmasq') do
+    it { should be_installed }
     it { should be_enabled }
     it { should be_running }
+  end
+end
+
+control 'dnsmasq-package-01' do
+  impact 1.0
+  title 'dnsmasq package is installed'
+
+  describe package('dnsmasq') do
+    it { should be_installed }
+  end
+end
+
+control 'dnsmasq-directory-01' do
+  impact 0.7
+  title 'dnsmasq config directory exists'
+
+  describe directory('/etc/dnsmasq.d') do
+    it { should exist }
+    its('mode') { should cmp '0755' }
   end
 end
 

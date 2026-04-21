@@ -52,7 +52,7 @@ module DnsmasqCookbook
     end
 
     def default_manage_systemd_resolved?
-      platform?('ubuntu') && node['platform_version'].to_f >= 18.04
+      platform?('ubuntu')
     end
   end
 end

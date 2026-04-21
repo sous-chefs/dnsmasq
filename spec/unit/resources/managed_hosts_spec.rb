@@ -35,4 +35,22 @@ describe 'dnsmasq_managed_hosts' do
       comment: 'dnsmasq managed entry'
     )
   end
+
+  context 'action :delete' do
+    recipe do
+      service 'dnsmasq' do
+        action :nothing
+      end
+
+      dnsmasq_managed_hosts 'default' do
+        data_bag false
+        entries(
+          '10.0.0.20' => ['router.test.lab', 'router']
+        )
+        action :delete
+      end
+    end
+
+    it { is_expected.to remove_hostsfile_entry('10.0.0.20') }
+  end
 end
