@@ -27,9 +27,6 @@ jobs:
           - centos-stream-9
           - debian-12
           - debian-13
-          - fedora-latest
-          - oraclelinux-8
-          - oraclelinux-9
           - rockylinux-9
           - ubuntu-2204
           - ubuntu-2404
