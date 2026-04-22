@@ -70,8 +70,17 @@ control 'dnsmasq-dns-01' do
     its('exit_status') { should eq 0 }
     its('stdout') { should match(/^google.com has address/) }
   end
+end
 
-  describe port(53), unless: os.redhat? do
+control 'dnsmasq-port-01' do
+  impact 0.7
+  title 'dnsmasq listens on port 53 where socket checks are reliable'
+
+  only_if('Port 53 checks are skipped on Red Hat family Dokken images') do
+    !os.redhat?
+  end
+
+  describe port(53) do
     it { should be_listening }
   end
 end
