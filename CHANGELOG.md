@@ -2,6 +2,29 @@
 
 This file is used to list changes made in each version of the Dnsmasq cookbooks.
 
+## [2.0.0](https://github.com/sous-chefs/dnsmasq/compare/v1.1.15...v2.0.0) (2026-04-22)
+
+
+### ⚠ BREAKING CHANGES
+
+* Fedora and Oracle Linux are no longer included in the automated test matrix for this cookbook.
+
+### Features
+
+* add :delete action to dnsmasq resource and fix managed_hosts ([d023f46](https://github.com/sous-chefs/dnsmasq/commit/d023f46a0ec4f06890683603444ef8b01f18068b))
+* drop fedora and oraclelinux test coverage ([a28ae62](https://github.com/sous-chefs/dnsmasq/commit/a28ae626382c54c09841cbb4929c41dd40ab0dc2))
+* migrate dnsmasq to resources ([7c11816](https://github.com/sous-chefs/dnsmasq/commit/7c118162df307ec86692c13314dddc4eaf6af93e))
+* modernize platforms and kitchen config ([750430b](https://github.com/sous-chefs/dnsmasq/commit/750430b7eda4b2df30462f177b588789c3064899))
+
+
+### Bug Fixes
+
+* **ci:** Update workflows to use release pipeline ([#108](https://github.com/sous-chefs/dnsmasq/issues/108)) ([d2454c2](https://github.com/sous-chefs/dnsmasq/commit/d2454c24f08f666d9d0193c5dcc30cd6174040e5))
+* skip flaky rhel port check ([c967c59](https://github.com/sous-chefs/dnsmasq/commit/c967c59a42628d736aa7b6e68279dc34be3254f6))
+* stabilize dnsmasq CI ([a6c78ef](https://github.com/sous-chefs/dnsmasq/commit/a6c78ef85452b583320549d1a169d63e3bb43d2b))
+* stabilize dnsmasq integration suites ([db811aa](https://github.com/sous-chefs/dnsmasq/commit/db811aa9c7f2acd5fea492e53eecb9c0ded705ba))
+* use eth0 instead of eth1 in test recipe for Dokken containers ([7b98010](https://github.com/sous-chefs/dnsmasq/commit/7b98010392701e6ae1f1cdc4d579ca84028ffdea))
+
 ## [1.1.15](https://github.com/sous-chefs/dnsmasq/compare/1.1.14...v1.1.15) (2025-10-15)
 
 ### Bug Fixes
