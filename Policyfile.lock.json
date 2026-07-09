@@ -1,0 +1,110 @@
+{
+  "revision_id": "b098ee35a288790ac4437a3e3fe45e1dc9cfff8aeb316bd5ac18ab3bbce782fe",
+  "name": "dnsmasq",
+  "run_list": [
+    "recipe[test::default]"
+  ],
+  "named_run_lists": {
+    "default": [
+      "recipe[test::default]"
+    ]
+  },
+  "included_policy_locks": [
+
+  ],
+  "cookbook_locks": {
+    "dnsmasq": {
+      "version": "2.0.0",
+      "identifier": "7beb596f93afa4a7987b04ad366b048e2eebd749",
+      "dotted_decimal_identifier": "34880191491977124.47173975237539435.5008719075145",
+      "source": ".",
+      "cache_key": null,
+      "scm_info": {
+        "scm": "git",
+        "remote": null,
+        "revision": "caeba6aa6c2ec68024f7fa563c40310d8330cfe2",
+        "working_tree_clean": false,
+        "published": true,
+        "synchronized_remote_branches": [
+          "origin/HEAD -> origin/main",
+          "origin/main"
+        ]
+      },
+      "source_options": {
+        "path": "."
+      }
+    },
+    "hostsfile": {
+      "version": "3.0.1",
+      "identifier": "bfd04b43ad8f700502796f33f112e5abc95154e5",
+      "dotted_decimal_identifier": "53990742228307824.1410095463526674.252525979718885",
+      "cache_key": "hostsfile-71ed85e0da701378e2f3f791881ca5e832b73f08",
+      "origin": "https://github.com/customink-webops/hostsfile.git",
+      "source_options": {
+        "git": "https://github.com/customink-webops/hostsfile.git",
+        "revision": "71ed85e0da701378e2f3f791881ca5e832b73f08",
+        "branch": "master"
+      }
+    },
+    "test": {
+      "version": "0.0.1",
+      "identifier": "9fc585ece3840906bccb6e1554a7bdb4dc29d068",
+      "dotted_decimal_identifier": "44971700292649993.1896431771538599.208584485490792",
+      "source": "test/cookbooks/test",
+      "cache_key": null,
+      "scm_info": {
+        "scm": "git",
+        "remote": null,
+        "revision": "caeba6aa6c2ec68024f7fa563c40310d8330cfe2",
+        "working_tree_clean": false,
+        "published": true,
+        "synchronized_remote_branches": [
+          "origin/HEAD -> origin/main",
+          "origin/main"
+        ]
+      },
+      "source_options": {
+        "path": "test/cookbooks/test"
+      }
+    }
+  },
+  "default_attributes": {
+
+  },
+  "override_attributes": {
+
+  },
+  "solution_dependencies": {
+    "Policyfile": [
+      [
+        "dnsmasq",
+        ">= 0.0.0"
+      ],
+      [
+        "hostsfile",
+        ">= 0.0.0"
+      ],
+      [
+        "test",
+        ">= 0.0.0"
+      ]
+    ],
+    "dependencies": {
+      "dnsmasq (2.0.0)": [
+        [
+          "hostsfile",
+          ">= 0.0.0"
+        ]
+      ],
+      "hostsfile (3.0.1)": [
+
+      ],
+      "test (0.0.1)": [
+        [
+          "dnsmasq",
+          ">= 0.0.0"
+        ]
+      ]
+    }
+  }
+}
