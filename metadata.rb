@@ -9,7 +9,7 @@ description       'Provides dnsmasq custom resources for install, DNS, DHCP, and
 chef_version      '>= 16.0'
 source_url        'https://github.com/sous-chefs/dnsmasq'
 issues_url        'https://github.com/sous-chefs/dnsmasq/issues'
-version           '2.0.0'
+version           '2.0.1'
 
 depends 'hostsfile'
 

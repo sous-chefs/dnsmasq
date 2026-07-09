@@ -2,6 +2,13 @@
 
 This file is used to list changes made in each version of the Dnsmasq cookbooks.
 
+## [2.0.1](https://github.com/sous-chefs/dnsmasq/compare/v2.0.0...v2.0.1) (2026-07-09)
+
+
+### Bug Fixes
+
+* migrate to Policyfile ([#123](https://github.com/sous-chefs/dnsmasq/issues/123)) ([2619945](https://github.com/sous-chefs/dnsmasq/commit/2619945c9f9bd4d71bcf577a6cbd318579079a80))
+
 ## [2.0.0](https://github.com/sous-chefs/dnsmasq/compare/v1.1.15...v2.0.0) (2026-04-22)
 
 
