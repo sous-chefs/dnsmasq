@@ -1,5 +1,5 @@
 {
-  "revision_id": "b098ee35a288790ac4437a3e3fe45e1dc9cfff8aeb316bd5ac18ab3bbce782fe",
+  "revision_id": "d2a4b0c72b50454a2a2cffdc59c15e5e9f3a144485b4a143fcec781e7285fccb",
   "name": "dnsmasq",
   "run_list": [
     "recipe[test::default]"
@@ -14,15 +14,15 @@
   ],
   "cookbook_locks": {
     "dnsmasq": {
-      "version": "2.0.0",
-      "identifier": "7beb596f93afa4a7987b04ad366b048e2eebd749",
-      "dotted_decimal_identifier": "34880191491977124.47173975237539435.5008719075145",
+      "version": "2.0.1",
+      "identifier": "f95834a3b592dee3924679487296ead1429369e1",
+      "dotted_decimal_identifier": "70184252309082846.64055651093475990.258184486021601",
       "source": ".",
       "cache_key": null,
       "scm_info": {
         "scm": "git",
-        "remote": null,
-        "revision": "caeba6aa6c2ec68024f7fa563c40310d8330cfe2",
+        "remote": "git@github.com:sous-chefs/dnsmasq.git",
+        "revision": "4fe8e03292dc69cc8e28866e1d94184da6de2e3b",
         "working_tree_clean": false,
         "published": true,
         "synchronized_remote_branches": [
@@ -54,8 +54,8 @@
       "cache_key": null,
       "scm_info": {
         "scm": "git",
-        "remote": null,
-        "revision": "caeba6aa6c2ec68024f7fa563c40310d8330cfe2",
+        "remote": "git@github.com:sous-chefs/dnsmasq.git",
+        "revision": "4fe8e03292dc69cc8e28866e1d94184da6de2e3b",
         "working_tree_clean": false,
         "published": true,
         "synchronized_remote_branches": [
@@ -90,7 +90,7 @@
       ]
     ],
     "dependencies": {
-      "dnsmasq (2.0.0)": [
+      "dnsmasq (2.0.1)": [
         [
           "hostsfile",
           ">= 0.0.0"
