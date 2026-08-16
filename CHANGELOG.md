@@ -2,6 +2,13 @@
 
 This file is used to list changes made in each version of the Dnsmasq cookbooks.
 
+## [2.0.2](https://github.com/sous-chefs/dnsmasq/compare/v2.0.1...v2.0.2) (2026-08-16)
+
+
+### Bug Fixes
+
+* stop tracking Policyfile.lock.json ([#128](https://github.com/sous-chefs/dnsmasq/issues/128)) ([3c65681](https://github.com/sous-chefs/dnsmasq/commit/3c65681c09c440c475213f45299f65bae400ecc9))
+
 ## [2.0.1](https://github.com/sous-chefs/dnsmasq/compare/v2.0.0...v2.0.1) (2026-07-09)
 
 
